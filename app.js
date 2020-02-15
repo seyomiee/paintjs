@@ -9,6 +9,7 @@ const INITIAL_COLOR= "#2c2c2c";
 canvas.width= 800;
 canvas.height= 635;
 
+ctx.fillStyle="white";
 ctx.strokeStye="INITIAL_COLOR";
 ctx.fillStyle="INITIAL_COLOR";
 ctx.lineWidth=2.5;
@@ -60,7 +61,9 @@ function handleRange(e){
 }
 
 function handleCanvasClick(){
+    if(filling){
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
 }
 
 if(canvas){
