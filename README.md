@@ -1,5 +1,5 @@
-# paintjs
+# paintJS
 
-![pjs]./doc/pjs.png
+![pjs](./doc/pjs.png)
 
 ### paintJS srceenshot
