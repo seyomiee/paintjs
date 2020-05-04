@@ -4,6 +4,8 @@ const colors= document.getElementsByClassName("jsColor");
 const range = document.getElementById("jsRange");
 const mode= document.getElementById("jsMode");
 const saveBtn= document.getElementById("jsSave");
+const imgBtn= document.getElementById('imgBtn');
+const openBtn= document.getElementById("jsOpen");
 
 const INITIAL_COLOR= "#2c2c2c";
 
@@ -94,6 +96,22 @@ function handleSaveClick(){
     link.click();
 }
 
+//파일 가져오기
+function handleOpenClick(e){       
+          imgBtn.click();
+          const reader= new FileReader();
+          reader.onload = function(event){
+            const imgObj= new Image();
+            imgObj.onload= function(){
+                canvas.width= imgObj.width;
+                canvas.height=imgObj.height;
+                ctx.drawImage(imgObj,0,0);
+            }
+            imgObj.src= event.target.result;
+        }
+        reader.readAsDataURL(e.target.files[0]); 
+}
+
 Array.from(colors).forEach(color=> 
     color.addEventListener("click", handleColorClick)
     //color ㄷㅏ른 이름이어도 괜찮음. array 안의 각 아이템 대표하는 역할
@@ -109,4 +127,8 @@ if(mode){
 }
 if(saveBtn){
     saveBtn.addEventListener("click",handleSaveClick);
+}
+
+if(openBtn){
+    openBtn.addEventListener("click",handleOpenClick);
 }
