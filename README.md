@@ -12,7 +12,7 @@
 - [x] fill/paint
 - [x] save
 - [x] brush size
-- [ ] get img on pc
+- [x] get img on pc
 - [ ] text
 - [ ] color.transparent
 - [ ] brush.style
